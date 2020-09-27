@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\BooksController;
-
 use App\Http\Controllers\MarketController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +27,12 @@ Route::get('/markets/', [MarketController::class, 'index']);
 Route::get('/markets/{market}', [MarketController::class, 'show']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $user = Auth::user();
+
+    return view('dashboard', [
+        'title' => 'Dashboard',
+        'header' => 'Your Dashboard',
+        'dashboardHeader' => Helpers::getTimeOfDayString($user->name),
+        'current_user' => $user
+    ]);
 })->name('dashboard');
