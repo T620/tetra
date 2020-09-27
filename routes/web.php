@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarketController;
 
+use App\Models\Market;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/books', [BooksController::class, 'index']);
 
 Route::get('/books/{id}', [BooksController::class, 'show']);
@@ -33,6 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         'title' => 'Dashboard',
         'header' => 'Your Dashboard',
         'dashboardHeader' => Helpers::getTimeOfDayString($user->name),
-        'current_user' => $user
+        'currentUser' => $user,
+        'favouriteMarket' => Market::first()
     ]);
 })->name('dashboard');
