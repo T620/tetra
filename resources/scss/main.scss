@@ -1,0 +1,16 @@
+$hyperlinkColour: #2ecc71;
+$hyperlinkHoverColour: #16a085;
+
+$standardHoverTransition: all 200ms linear;
+
+a {
+    color: $hyperlinkColour;
+    transition: $standardHoverTransition;
+    will-change: transition;
+
+    &:hover {
+        color: $hyperlinkHoverColour;
+        transition: $standardHoverTransition;
+        will-change: transition;
+    }
+}

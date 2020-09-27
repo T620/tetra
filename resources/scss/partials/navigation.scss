@@ -1,9 +1,27 @@
+$hyperlinkColour: #2ecc71;
+$hyperlinkHoverColour: #16a085;
+
+$standardHoverTransition: all 200ms linear;
+
 .navigation {
     &__top {
-        padding: 1em 4em;
+        padding: .3em 4em;
         box-shadow: 0 0px 15px #ccc;
         display: flex;
-        height: 5vh;
+        align-items: center;
+        height: auto;
+
+        a {
+            color: $hyperlinkColour;
+            transition: $standardHoverTransition;
+            will-change: transition;
+
+            &:hover {
+                color: $hyperlinkHoverColour;
+                transition: $standardHoverTransition;
+                will-change: transition;
+            }
+        }
 
         &__list {
             margin-left: auto;
@@ -17,7 +35,7 @@
     }
 
     &__side {
-        width: 18em;
+        width: 15em;
         height: 100%;
 
         &__list {
@@ -38,13 +56,11 @@
                 a {
                     padding: 1em;
                     color: #ecf0f1;
-                    transition: all 200ms linear;
-                    will-change: transition;
                     width: 100%;
 
                     &:hover {
-                        color: #8e44ad;
-                        transition: all 200ms linear;
+                        color: $hyperlinkHoverColour;
+                        transition: $standardHoverTransition;
                         will-change: transition;
                     }
                 }
@@ -56,10 +72,20 @@
         background: #353b48;
         padding: 1em 4em;
         display: flex;
-        color: #ecf0f1;
+        color: #ecf0f1 !important;
 
         span.copyright-notice {
             margin-right: auto;
+        }
+
+        span.github-link a{
+            color: #ecf0f1 !important;
+        }
+
+        a:hover {
+            color: $hyperlinkHoverColour;
+            transition: $standardHoverTransition;
+            will-change: transition;
         }
     }
 }
