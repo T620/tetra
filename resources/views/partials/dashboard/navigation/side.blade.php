@@ -5,6 +5,6 @@
         <li><a href="/products/">Products</a></li>
         <li><a href="#0">Manage Stock</a></li>
         <li><a href="#0">Sales</a></li>
-        <li><a href="/profile/">{{$current_user->name}}</a></li>
+        <li><a href="/profile/">{{$currentUser->name}}</a></li>
     </ul>
 </nav>
