@@ -13,4 +13,9 @@ class MarketProduct extends Model
     {
         return $this->hasOne(Product::class, 'id');
     }
+
+    public function priceRange()
+    {
+        return "{$this->price_low}-{$this->price_high}";
+    }
 }

@@ -15,17 +15,17 @@ class Market extends Model
 
     // I have next to no knowledge of the fishing industry but i'm trying to demo that I understand how to use enums along with foreign keys so please forgive the naivety.
 
-    protected $enumSizes = [
-        'Small',
-        'Medium',
-        'Large',
-        'Regional'
+    CONST SIZES = [
+        0 =>'Small',
+        1 =>'Medium',
+        2 =>'Large',
+        3 =>'Regional'
     ];
 
-    protected $enumTypes = [
-        'Public',
-        'Private',
-        'Export'
+    CONST TYPES = [
+        0 => 'Public',
+        1 => 'Private',
+        2 => 'Export'
     ];
 
     public function products()
@@ -52,5 +52,15 @@ class Market extends Model
         }
 
         return $this->slug;
+    }
+
+    public function size()
+    {
+        return $this::SIZES[$this->size];
+    }
+
+    public function type()
+    {
+        return $this::TYPES[$this->type];
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MarketController;
 
+use App\Http\Controllers\MarketController;
 use App\Models\Market;
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/books', [BooksController::class, 'index']);
 
-Route::get('/books/{id}', [BooksController::class, 'show']);
-
-Route::get('/markets/', [MarketController::class, 'index']);
-Route::get('/markets/{market}', [MarketController::class, 'show']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/markets', [MarketController::class, 'index']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/markets/{market}', [MarketController::class, 'show']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $user = Auth::user();
 
-    return view('dashboard', [
+    return view('dashboard.index', [
         'title' => 'Dashboard',
         'header' => 'Your Dashboard',
         'dashboardHeader' => Helpers::getTimeOfDayString($user->name),

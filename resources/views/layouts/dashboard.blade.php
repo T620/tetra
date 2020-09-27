@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
         <!-- Scripts -->
-        <script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
+        <!-- <script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script> -->
     </head>
     <body class="font-sans antialiased">
         @include('partials.dashboard.navigation.top')
@@ -29,9 +29,9 @@
     </body>
 
     <script>
-        (function() {
-            console.info("ready");
-            window.renderChart();
-        });
+        // (function() {
+        //     console.info("ready");
+        //     window.renderChart();
+        // });
     </script>
 </html>

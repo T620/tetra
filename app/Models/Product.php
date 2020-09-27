@@ -23,6 +23,6 @@ class Product extends Model
 
     public function priceRange()
     {
-        return "{$this->price_low}-{$this->price_high}&pound;/Kg";
+        return "{$this->price_low}-{$this->price_high}";
     }
 }
