@@ -1,0 +1,81 @@
+.welcome {
+    &__jumbotron {
+        background: url(../img/welcome_background.jpg) #2c3e50;
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+        padding: 2em;
+
+        h1 {
+            font-size: 5em;
+            color: #ecf0f1;
+            text-align: center;
+            text-shadow: 0px 2px 3px #2c3e50;
+        }
+
+        .cta {
+            display: block;
+            margin: 5em auto 0 auto;
+            font-size: 2em;
+            z-index: 22;
+            background: #ecf0f1;
+            padding: .5em;
+            border-radius: 100px;
+            width: 1em;
+            cursor: pointer;
+            color: #2c3e50;
+            box-shadow: 0 3px 5px #2c3e50;
+        }
+    }
+
+    &__humble_introduction {
+        text-align: center;
+        padding: 1em 4em;
+        height: 10em;
+    }
+
+    h2.section-header {
+        font-size: 3.5em !important;
+        color:  #2c3e50;
+    }
+
+    p {
+        color:  #2c3e50;
+    }
+
+    &__key-principles {
+        
+        .principles-wrapper {
+            width: 75%;
+            margin: 0 auto 2em auto;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+        }
+        
+        h3 {
+            text-align: center;
+            display: block;
+            margin: 2em auto;
+        }
+
+        .principle {
+            width: 25%;
+            margin: 1em auto;
+
+            span {
+                font-weight: 700;
+            }
+
+            .principle-icon {
+                font-size: 2em;
+                margin: 1em auto;
+                display: block;
+            }
+        }
+    }
+
+    &__get-started {
+        margin-top: 20em;
+    }
+}

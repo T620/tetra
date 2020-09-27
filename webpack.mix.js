@@ -20,3 +20,4 @@ mix.js('resources/js/app.js', 'public/js')
 mix.js('resources/js/dashboard.js', 'public/js/dashboard.js');
 mix.sass('resources/scss/main.scss', 'public/css/main.css');
 mix.sass('resources/scss/dashboard.scss', 'public/css/dashboard.css');
+mix.sass('resources/scss/welcome.scss', 'public/css/welcome.css');

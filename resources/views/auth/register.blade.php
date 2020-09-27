@@ -1,8 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
+
+    <h3>Create a free account</h3>
+        <!-- <x-slot name="logo">
             <x-jet-authentication-card-logo />
-        </x-slot>
+        </x-slot> -->
 
         <x-jet-validation-errors class="mb-4" />
 
@@ -11,7 +13,7 @@
 
             <div>
                 <x-jet-label value="{{ __('Name') }}" />
-                <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autocomplete="name" />
             </div>
 
             <div class="mt-4">
