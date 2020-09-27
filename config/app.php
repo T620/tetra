@@ -123,6 +123,12 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    // API configs for the UK Hydrographic Office. Used to show tide times
+    'admirality_api_url' => env('ADMIRALITY_API_URL', false),
+
+    // you may use my API key
+    'admirality_api_key' => env('ADMIRALITY_API_KEY', false),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
