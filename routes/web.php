@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\BooksController;
 
+use App\Http\Controllers\MarketController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +24,10 @@ Route::get('/', function () {
 Route::get('/books', [BooksController::class, 'index']);
 
 Route::get('/books/{id}', [BooksController::class, 'show']);
+
+Route::get('/markets/', [MarketController::class, 'index']);
+Route::get('/markets/{market}', [MarketController::class, 'show']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
