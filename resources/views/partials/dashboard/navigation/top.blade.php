@@ -1,5 +1,5 @@
 <nav class="navigation__top">
-    <div class="navigation__brand"><a href="/">Tetra</a></div>
+    <div class="navigation__brand"><a href="{{ url('/') }}">Tetra</a></div>
 
     <ul class="navigation__top__list">
 
