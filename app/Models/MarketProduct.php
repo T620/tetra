@@ -9,13 +9,13 @@ class MarketProduct extends Model
 {
     use HasFactory;
 
-    public function product()
+    public function product() : object
     {
         return $this->hasOne(Product::class, 'id');
     }
 
-    public function priceRange()
+    public function priceRange() : string
     {
-        return "{$this->price_low}-{$this->price_high}";
+        return sprintf ('%s - %s', $this->price_low, $this->price_high);
     }
 }
