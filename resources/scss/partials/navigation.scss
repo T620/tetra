@@ -35,7 +35,7 @@ $standardHoverTransition: all 200ms linear;
     }
 
     &__side {
-        width: 15em;
+        width: 16em;
         height: 100%;
 
         &__list {
@@ -50,19 +50,31 @@ $standardHoverTransition: all 200ms linear;
 
             li {
                 margin: auto;
-                width: 80%;
+                width: 85%;
                 padding: 1em;
 
                 a {
                     padding: 1em;
                     color: #ecf0f1;
                     width: 100%;
+                    transition: $standardHoverTransition;
+                    will-change: transition;
 
                     &:hover {
                         color: $hyperlinkHoverColour;
                         transition: $standardHoverTransition;
                         will-change: transition;
                     }
+                    
+                    &.active {
+                        color: $hyperlinkHoverColour;
+                    }
+                }
+                
+                
+
+                &:last-of-type {
+                    margin-top: 25em;
                 }
             }
         }
