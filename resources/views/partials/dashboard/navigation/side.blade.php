@@ -1,10 +1,11 @@
 <nav class="navigation__side">
     <ul class="navigation__side__list">
-    <!-- turn this into a dynamic list -->
-        <li><a href="/markets/">Markets</a></li>
-        <li><a href="/products/">Products</a></li>
-        <li><a href="#0">Manage Stock</a></li>
-        <li><a href="#0">Sales</a></li>
-        <li><a href="/profile/">{{$currentUser->name}}</a></li>
+        @foreach ($navItems as $navItem)
+            @if ($navItem['resource'] === $currentNavItem)
+                <li><a href="{{ url($navItem['uri']) }}" class="active">{{ $navItem['resource'] }}</a></li>
+            @else
+                <li><a href="{{ url($navItem['uri']) }}">{{ $navItem    ['resource'] }}</a></li>
+            @endif
+        @endforeach
     </ul>
 </nav>
