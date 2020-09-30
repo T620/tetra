@@ -9,20 +9,20 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function species()
+    public function species() : object
     {
         return $this->hasOne(Species::class, 'id');
 
         // => Product->species == Species->name == 'Cod'
     }
 
-    public function size()
+    public function size() : object
     {
         return $this->hasOne(Size::class, 'id');
     }
 
-    public function priceRange()
+    public function priceRange() : string
     {
-        return "{$this->price_low}-{$this->price_high}";
+        return sprintf ('%s - %s', $this->price_low, $this->price_high);
     }
 }
