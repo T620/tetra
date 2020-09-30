@@ -31,6 +31,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         'header' => 'Your Dashboard',
         'dashboardHeader' => Helpers::getTimeOfDayString($user->name),
         'currentUser' => $user,
-        'favouriteMarket' => Market::first()
+        'favouriteMarket' => Market::first(),
+        'navItems' => Helpers::getDashboardLinks($user->name),
+        'currentNavItem' => 'dashboard'
     ]);
+
 })->name('dashboard');
