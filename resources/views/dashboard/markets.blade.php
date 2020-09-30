@@ -19,13 +19,13 @@
             @foreach($markets as $market)
                 <tr>
                     <td class="border px-4 py-2">
-                        <a href="/markets/{{$market->slug()}}">
-                            {{$market->name}}
+                        <a href="/markets/{{$market->slug}}">
+                            {{ $market->name }}
                         </a>
                     </td>
-                    <td class="border px-4 py-2">{{$market->town}}</td>
-                    <td class="border px-4 py-2">{{$market->size()}}</td>
-                    <td class="border px-4 py-2">{{$market->type()}}</td>
+                    <td class="border px-4 py-2">{{ $market->town }}</td>
+                    <td class="border px-4 py-2">{{ $market->size() }}</td>
+                    <td class="border px-4 py-2">{{ $market->type() }}</td>
                 </tr>
             @endforeach
         </tbody>
